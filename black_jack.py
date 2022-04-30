@@ -8,15 +8,15 @@ def deal_card():       # выбор карты
     return card
 
 
-def calculate_score(cards):
+def calculate_score(cards):   # определяем блэкджек
     if sum(cards) == 21 and len(cards) == 2:
         return 0
-    if 11 in cards and sum(cards) > 21:
+    if 11 in cards and sum(cards) > 21:    # заменяем 11 на 1
         cards.remove(11)
         cards.append(1)
     return sum(cards)
 
-def compare(user_score, computer_score):
+def compare(user_score, computer_score):    # сравниваем и определяем победителя
     if user_score == computer_score:
         return "Draw"
     elif computer_score == 0:
@@ -33,23 +33,23 @@ def compare(user_score, computer_score):
         return "You lose"
 
 
-def play_game():
+def play_game():    # функция общего процесса игры
     # print(logo)
-    user_cards = []
+    user_cards = []         # списки карт
     computer_cards = []
-    is_game_over = False
+    is_game_over = False      # флаг для окончания игры
 
-    for _ in range (2):
+    for _ in range (2):      # добавляем значения в переменные
         user_cards.append(deal_card())
         computer_cards.append(deal_card())
 
-    while not is_game_over:
+    while not is_game_over:      #
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
         print(f"  Your cards: {user_cards}, current score: {user_score}")
         print(f"   Computer's first card: {computer_cards[0]}")
 
-        if user_score == 0 or computer_score == 0 or user_score > 21:
+        if user_score == 0 or computer_score == 0 or user_score > 21:    # условие окончания игры
             is_game_over = True
         else:
             user_should_deal = input("Type 'y' to get another card, type 'n' to pass:  ")
@@ -58,7 +58,7 @@ def play_game():
             else:
                 is_game_over = True
 
-    while computer_score != 0 and computer_score < 17:
+    while computer_score != 0 and computer_score < 17:    # условия для игры компьютера
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
 
@@ -69,4 +69,4 @@ def play_game():
 
 while input("Играем в БлекДжек? 'y' or 'n' : ") == 'y':
     clear()
-    play_game()
+    play_game()     # вызываем первую функцию
