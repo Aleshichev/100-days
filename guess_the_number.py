@@ -17,7 +17,7 @@ def chek_answer(random_number,new_user_number,lifes):
 
 
 def level_choise():
-    game_level = input("Выбери уровень игры: Легко or Трудно: ").lower()
+    game_level = input("Выбери уровень игры. Легко или Трудно: ").lower()
     if game_level == 'легко':
         return EASY_LIFES_GAME
     else:
@@ -27,7 +27,6 @@ def level_choise():
 def game():
     random_number = random.randint(1,100)
     print("Привет! Я загадал цифру от 1 до 100. Угадай какую!")
-    print(random_number)
     lifes = level_choise()
     new_user_number = 0
     while new_user_number != random_number:
