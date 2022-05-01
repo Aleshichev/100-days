@@ -31,7 +31,7 @@ def game():
     new_user_number = 0
     while new_user_number != random_number:
         print(f"У тебя осталось {lifes} жизней")
-        new_user_number = int(input("Угадай число от 0 до 100: "))
+        new_user_number = int(input("Угадай число от 1 до 100: "))
         lifes = chek_answer(random_number,new_user_number,lifes)
         if lifes == 0:
             print("Жизни закончились! Конец игры!")
