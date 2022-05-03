@@ -25,9 +25,9 @@ MENU = {
 }
 
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "water": 1000,
+    "milk": 500,
+    "coffee": 300,
 }
 
 
@@ -62,10 +62,16 @@ def is_transaction_successful(money_received, drink_cost):
         return False
 
 def make_coffee(drink_name, order_ingredients):
-    """вычитаем необходимые ингредиенты и общих данных"""
+    """вычитаем необходимые ингредиенты из общих данных"""
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
     print(f"Here is your {drink_name}☕")
+
+def print_report():
+    print(f"Water: {resources['water']} ml")
+    print(f"Milk: {resources['milk']} ml")
+    print(f"Coffee: {resources['coffee']} g")
+    print(f"Money: ${profit}")
 
 
 profit = 0
@@ -76,16 +82,14 @@ while is_on:
     if choice == 'off':
         is_on = False
     elif choice == "report":
-        print(f"Water: {resources['water']} ml")
-        print(f"Milk: {resources['milk']} ml")
-        print(f"Coffee: {resources['coffee']} g")
-        print(f"Money: ${profit}")
+        print_report()
     else:
         drink = MENU[choice]
-        print(drink)
         if is_resource_sufficient(drink["ingredients"]):
             payment = process_coins()
             if is_transaction_successful(payment, drink["cost"]):
                 make_coffee(choice, drink["ingredients"])
+                print("Resources remain: ")
+                print_report()
 
 
