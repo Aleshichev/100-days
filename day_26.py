@@ -33,3 +33,5 @@ result = [int(num) for num in new_f if num in new_f2]
 # Write your code above 👆
 
 print(result)
+
+
