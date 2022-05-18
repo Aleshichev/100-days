@@ -1,26 +1,5 @@
 from tkinter import *
 
-# window = Tk()
-# window.title("My First GUI Program")
-# window.minsize(500, 300)
-#
-# my_lable = Label(text="I Am a lable", font=("Arial", 20, "bold"))
-# my_lable.pack()
-#
-# my_lable["text"] = "New Text"      # меняем свойства
-# my_lable.config(text="New Text")     # меняем свойства
-#
-# def button_clicked():
-#     my_lable["text"] = input.get()
-#     print("I got clicked")
-# button = Button(text="Click me", command=button_clicked)
-# button.pack()
-#
-# input = Entry(width=10)
-# input.pack()
-# input.get()
-#
-
 #Creating a new window and configurations
 window = Tk()
 window.title("Widget Examples")
