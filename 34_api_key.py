@@ -36,3 +36,4 @@ if will_rain:
     print(message.status)
 # print(weather_data["hourly"][0]["weather"][0]['id'])
 
+
