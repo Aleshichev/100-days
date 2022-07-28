@@ -42,11 +42,12 @@ def is_resource_sufficient(order_ingredients):
 
 def process_coins():
     """Возвращает общую сумму монет"""
-    print("Please insert coins.")
+    print("Espresso is 1.5$, Latte is 2.5$, Cappuccino is 3$\n Please insert coins.")
     total = int(input("how many quarters? $0.25: ")) * 0.25
     total += int(input("how many diemes? $0.1: ")) * 0.1
     total += int(input("how many nickles? $0.05: ")) * 0.05
     total += int(input("how many pennies? $0.01: ")) * 0.01
+    print(f"Your money is {total}$")
     return total
 
 def is_transaction_successful(money_received, drink_cost):
